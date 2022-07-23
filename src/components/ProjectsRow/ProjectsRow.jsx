@@ -33,6 +33,7 @@ function ProjectsRow({ project }) {
               height: 24,
               fontSize: "9px",
               marginRight: "8.3px",
+              fontFamily: "Inter",
             }}
             {...stringAvatar(projectManager)}
           />
@@ -49,6 +50,7 @@ function ProjectsRow({ project }) {
               height: 24,
               fontSize: "9px",
               marginRight: "8.3px",
+              fontFamily: "Inter",
             }}
             {...stringAvatar(assignedTo)}
           />
@@ -57,7 +59,22 @@ function ProjectsRow({ project }) {
           </Typography>
         </Stack>
       </TableCell>
-      <TableCell>{status}</TableCell>
+      <TableCell>
+        <Typography
+          fontSize={12}
+          color="#595959"
+          sx={{
+            border: "1px solid #d9d9d9",
+            borderRadius: "4px",
+            width: "59px",
+            backgroundColor: "#f5f5f5",
+            textAlign: "center",
+            padding: "1px 8px",
+          }}
+        >
+          {status}
+        </Typography>
+      </TableCell>
       <TableCell>
         <OptionsMenu id={id} />
       </TableCell>
