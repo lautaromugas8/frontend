@@ -15,12 +15,12 @@ function ProjectsTable() {
     <TableContainer sx={{ margin: "0 48px", width: "auto" }} component={Paper}>
       <Table>
         <TableHead>
-          <TableRow>
-            <TableCell>Project info</TableCell>
-            <TableCell>Project Manager</TableCell>
-            <TableCell>Assigned to</TableCell>
-            <TableCell>Status</TableCell>
-            <TableCell>Action</TableCell>
+          <TableRow sx={{ backgroundColor: "rgba(0, 0, 0, 0.02)" }}>
+            <TableCell sx={{ fontWeight: 600 }}>Project info</TableCell>
+            <TableCell sx={{ fontWeight: 600 }}>Project Manager</TableCell>
+            <TableCell sx={{ fontWeight: 600 }}>Assigned to</TableCell>
+            <TableCell sx={{ fontWeight: 600 }}>Status</TableCell>
+            <TableCell sx={{ fontWeight: 600 }}>Action</TableCell>
           </TableRow>
         </TableHead>
         <TableBody>
