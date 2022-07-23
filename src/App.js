@@ -1,23 +1,26 @@
-import logo from './logo.svg';
-import './App.css';
+import "./App.css";
+import Home from "./components/views/Home";
+import Add from "./components/views/Add";
+import Edit from "./components/views/Edit";
+import HomeMobile from "./components/views/HomeMobile";
+import useWindowSize from "./hooks/useWindowSize";
+import { Routes, Route } from "react-router-dom";
 
 function App() {
+  const size = useWindowSize();
+  const handleDeviceView = () => {
+    if (size.width < 768) {
+      return <HomeMobile />;
+    } else return <Home />;
+  };
+
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      <Routes>
+        <Route path="/" element={handleDeviceView()} />
+        <Route path="/add" element={<Add />} />
+        <Route path="/edit/:id" element={<Edit />} />
+      </Routes>
     </div>
   );
 }
